@@ -22,7 +22,12 @@ namespace Chicken_Nest
                 (Building_Bed)
                 GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, thingReq, PathEndMode.OnCell,
                     TraverseParms.For(pawn, Danger.None, TraverseMode.ByPawn, false), maxDistance: MaxSearchDistance);
-            return new Job(JobDefOf.LayEgg, (LocalTargetInfo)chickenNest.Position);
+            if (chickenNest != null)
+            {
+                return new Job(JobDefOf.LayEgg, (LocalTargetInfo)chickenNest.Position);
+            }
+            var intVec3 = RCellFinder.RandomWanderDestFor(pawn, pawn.Position, 5f,null, Danger.Some);
+            return new Job(JobDefOf.LayEgg, (LocalTargetInfo)intVec3);
         }
         
     }
