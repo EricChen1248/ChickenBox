@@ -7,8 +7,8 @@
     <ProjectGuid>{AD056778-32CF-459C-B76B-41BB265BC9CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ChickenBox</RootNamespace>
-    <AssemblyName>ChickenBox</AssemblyName>
+    <RootNamespace>Chicken_Nest</RootNamespace>
+    <AssemblyName>Chicken_Nest</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -34,6 +34,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\DLLS\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="HugsLib">
+      <HintPath>..\..\..\..\..\Games\Rimworld\Windows\Mods\HugsLib\Assemblies\HugsLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,8 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Building_ChickenNest.cs" />
-    <Compile Include="JobGiver_FindChickenBox.cs" />
+    <Compile Include="_JobGiver_LayEgg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

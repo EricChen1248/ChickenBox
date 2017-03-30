@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using HugsLib.Source.Detour;
 using RimWorld;
 using Verse;
 using Verse.AI;
 
-namespace ChickenBox
+namespace Chicken_Nest
 {
-    public class JobGiver_FindChickenBox : ThinkNode_JobGiver
+    public class _JobGiver_LayEgg : ThinkNode_JobGiver
     {
         private const int MaxSearchDistance = 30;
-        
+
+        [DetourMethod(typeof(JobGiver_LayEgg), "TryGiveJob")]
         protected override Job TryGiveJob(Pawn pawn)
         {
             
@@ -26,5 +24,6 @@ namespace ChickenBox
                     TraverseParms.For(pawn, Danger.None, TraverseMode.ByPawn, false), maxDistance: MaxSearchDistance);
             return new Job(JobDefOf.LayEgg, (LocalTargetInfo)chickenNest.Position);
         }
+        
     }
 }
